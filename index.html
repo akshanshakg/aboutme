@@ -1,220 +1,1157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chad — Portfolio</title>
-  <meta name="description" content="Chad | Engineering student building ML systems and human-grade tools." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <title>Akshansh Kumar Gupta | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Akshansh Kumar Gupta - Mechanical Engineering, Robotics, Data Science, AI/ML, Autonomous Systems and Financial Mathematics." />
+  <style>
+    :root {
+      --bg: #050711;
+      --bg-alt: #0b0f1c;
+      --card: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --accent-grad: linear-gradient(135deg, #22c55e, #14b8a6);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.95);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --nav-height: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: radial-gradient(circle at top, #020617 0, #020617 30%, #000 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.4rem 4rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.78), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.22);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-orb {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #22c55e, #14b8a6 40%, #111827 80%);
+      box-shadow:
+        0 0 20px rgba(34, 197, 94, 0.8),
+        0 0 50px rgba(45, 212, 191, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-orb::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: inherit;
+      background: radial-gradient(circle at 25% 20%, rgba(248, 250, 252, 0.5), transparent 60%);
+      opacity: 0.7;
+    }
+
+    .nav-title-main {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.96rem;
+    }
+
+    .nav-title-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+      color: var(--muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-grad);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(15,23,42,0.8);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+
+    .btn-outline {
+      padding: 0.44rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text);
+      transition: background 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .btn-outline:hover {
+      background: #020617;
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      border: 1px solid rgba(148,163,184,0.5);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      background: rgba(15,23,42,0.9);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 2.6rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-kicker span {
+      font-size: 0.78rem;
+      padding: 0.14rem 0.6rem;
+      border-radius: var(--radius-full);
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #bbf7d0;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span {
+      background-image: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.94rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-subtitle-strong {
+      color: #e5e7eb;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: var(--muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .tag-strong {
+      border-color: rgba(34, 197, 94, 0.7);
+      color: #bbf7d0;
+      background: rgba(22, 163, 74, 0.22);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-full);
+      border: none;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      background-image: var(--accent-grad);
+      color: #020617;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-primary span {
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Hero right panel */
+    .hero-panel {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(34,197,94,0.16), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(56,189,248,0.18), #020617 70%);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 1.5rem 1.4rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hero-card-badge {
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      border: 1px solid rgba(248, 250, 252, 0.4);
+      background: rgba(15,23,42,0.7);
+      color: #e5e7eb;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .metric-card {
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .metric-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .metric-pill {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.7rem;
+      font-size: 0.65rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(34, 197, 94, 0.55);
+      background: rgba(22, 163, 74, 0.1);
+      color: #bbf7d0;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: -40%;
+      opacity: 0.22;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(34,197,94,0.5), transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(45,212,191,0.4), transparent 60%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 3.4rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 550;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* About & interests */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+      gap: 1.8rem;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-text p + p {
+      margin-top: 0.7rem;
+    }
+
+    .about-highlight {
+      color: #e5e7eb;
+    }
+
+    .interest-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .interest-chip {
+      border-radius: var(--radius-lg);
+      padding: 0.6rem 0.8rem;
+      font-size: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15,23,42,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .interest-chip strong {
+      font-size: 0.8rem;
+    }
+
+    .interest-chip span {
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left, rgba(34,197,94,0.08), rgba(15,23,42,0.98));
+      padding: 1rem 1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: border-color 0.18s ease-out, transform 0.18s ease-out, box-shadow 0.18s ease-out;
+    }
+
+    .project-card:hover {
+      border-color: rgba(34,197,94,0.75);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(15,23,42,0.9);
+    }
+
+    .project-topline {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 540;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-meta span {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .project-links {
+      margin-top: 0.35rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      font-size: 0.78rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .project-links a.primary-link {
+      border-color: rgba(34,197,94,0.8);
+      color: #bbf7d0;
+      background: rgba(22,163,74,0.15);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.8fr) minmax(0,2.2fr);
+      gap: 1.6rem;
+    }
+
+    .skill-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .skill-pill {
+      font-size: 0.72rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148,163,184,0.45);
+      color: var(--muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .skills-mini-heading {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.96);
+      padding: 0.8rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      padding: 0.35rem 0;
+    }
+
+    .timeline-row strong {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .timeline-tag {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact-box {
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: radial-gradient(circle at top left, rgba(34,197,94,0.12), rgba(15,23,42,0.96));
+      padding: 1.3rem 1.4rem;
+      display: grid;
+      grid-template-columns: minmax(0,2.6fr) minmax(0,1.4fr);
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-text span {
+      color: #e5e7eb;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: flex-end;
+    }
+
+    .contact-links a {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.96);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .contact-links a.highlight {
+      border-color: rgba(34,197,94,0.8);
+      color: #bbf7d0;
+      background: rgba(22,163,74,0.16);
+    }
+
+    footer {
+      margin-top: 2.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-panel {
+        order: -1;
+      }
+      .about-grid,
+      .projects-grid,
+      .skills-grid,
+      .contact-box {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .interest-list {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        background: rgba(15,23,42,0.96);
+      }
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+      .nav-toggle {
+        display: inline-flex;
+      }
+      .nav-mobile-open .nav-links,
+      .nav-mobile-open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        padding: 0.9rem 1.4rem 0.9rem;
+        background: rgba(15,23,42,0.97);
+        border-bottom: 1px solid rgba(148,163,184,0.3);
+      }
+      .nav-mobile-open .nav {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 0.6rem;
+      }
+      .hero {
+        padding-top: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#home" aria-label="Chad Home">CHAD<span class="dot">.</span></a>
-      <nav class="nav">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn btn--small">Get in touch</a>
+  <header>
+    <div class="shell nav-shell">
+      <nav class="nav" id="nav">
+        <div class="nav-left">
+          <div class="logo-orb"></div>
+          <div>
+            <div class="nav-title-main">AKSHANSH KUMAR GUPTA</div>
+            <div class="nav-title-sub">Mechanical · Robotics · Data · Finance</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Open to SDE / DS / Quant-adjacent roles</span>
+          </div>
+          <button class="btn-outline" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            View work
+          </button>
+        </div>
+        <button class="nav-toggle" id="navToggle">Menu</button>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section id="home" class="section hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">Tech • ML • Systems</p>
-          <h1 class="display">
-            <span class="muted">Hi, I’m</span>
-            <span class="name">Chad</span>
-          </h1>
-          <p class="subtitle">
-            I design and build reliable ML systems and fast interfaces. 
-            Curious mind, ruthless with latency, allergic to fluff.
-          </p>
+  <main class="shell">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div>
+        <div class="hero-kicker">
+          <span>IIT Delhi · B.Tech Mechanical</span>
+          <span>Robotics Minor</span>
+        </div>
+        <h1 class="hero-title">
+          Building at the intersection of <span>mechanical systems</span> and intelligent algorithms.
+        </h1>
+        <p class="hero-subtitle">
+          I’m Akshansh, a final-year Mechanical Engineering student with a minor in Robotics.<br />
+          <span class="hero-subtitle-strong">
+            I like turning physics-heavy systems into data-driven ones:
+          </span>
+          heat transfer surrogates, routing optimizers, imitation-learning navigation, and quantitative views on markets.
+        </p>
+        <div class="hero-tags">
+          <span class="tag tag-strong">Mechanical core &amp; CAD / FEA</span>
+          <span class="tag">Optimization &amp; Operations Research</span>
+          <span class="tag">Autonomous systems &amp; Robotics</span>
+          <span class="tag">AI / ML &amp; Representation Learning</span>
+          <span class="tag">Time-series &amp; Financial maths</span>
+        </div>
 
-          <div class="actions">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
-              <!-- LinkedIn SVG icon -->
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4zM8.5 8.5h3.8v2H12.4c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-4v-5.8c0-1.38-.03-3.16-1.92-3.16-1.93 0-2.22 1.5-2.22 3.05V23h-4V8.5z" fill="currentColor"/>
-              </svg>
-              <span>LinkedIn</span>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            Browse projects <span>↘</span>
+          </button>
+          <a class="btn-outline" href="#contact">
+            Contact / Resume
+          </a>
+        </div>
+        <div class="hero-meta">
+          Currently exploring roles where mechanical intuition + data + code actually ship something useful.
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">Signal board</div>
+            <div class="hero-card-badge">Live interests</div>
+          </div>
+          <div class="hero-grid">
+            <div class="metric-card">
+              <div class="metric-label">Thermal &amp; mechanical</div>
+              <div class="metric-value">Surrogate models</div>
+              <div class="metric-sub">
+                CNNs standing in for FEM to get
+                quick temperature and stress fields.
+              </div>
+              <div class="metric-pill">Physics × Deep Learning</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Autonomous systems</div>
+              <div class="metric-value">Imitation-first</div>
+              <div class="metric-sub">
+                Behavior-cloned ROS2 policies that actually
+                run on hardware, not just notebooks.
+              </div>
+              <div class="metric-pill">Robotics · ROS2</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Supply chains &amp; markets</div>
+              <div class="metric-value">Structured risk</div>
+              <div class="metric-sub">
+                LPs for PDS flows, and ML on prices,
+                churn and anomalies in financial data.
+              </div>
+              <div class="metric-pill">Ops · Quant</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Tooling mindset</div>
+              <div class="metric-value">Systems over scripts</div>
+              <div class="metric-sub">
+                I prefer building reusable pipelines:
+                RAG agents, forecasting stacks, data tooling.
+              </div>
+              <div class="metric-pill">Engineering focus</div>
+            </div>
+          </div>
+          <div class="hero-orbit"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / INTERESTS -->
+    <section id="about">
+      <div class="section-header">
+        <h2 class="section-title">About &amp; Focus Areas</h2>
+        <p class="section-kicker">Where the “mechanical engineer” and the “ML person” agree to cooperate.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I’m a B.Tech Mechanical Engineering student at IIT Delhi with a
+            <span class="about-highlight">minor in Robotics</span>.
+            My work so far sits on a spectrum: from FEM-based heat transfer and Hyperloop hardware,
+            to agentic RAG systems, optimization models and financial ML.
+          </p>
+          <p>
+            I enjoy problems where you can’t fake understanding:
+            modelling conduction plates, routing grain across states, or learning navigation policies from raw trajectories.
+            That usually means digging into theory first and then building systems that are
+            <span class="about-highlight">repeatable, testable and debuggable</span>.
+          </p>
+          <p>
+            Long term, I want to work on
+            <span class="about-highlight">autonomous physical systems and decision engines</span> —
+            the stuff that moves real-world mass or real-world money, ideally both.
+          </p>
+        </div>
+        <div class="interest-list">
+          <div class="interest-chip">
+            <strong>Mechanical Core</strong>
+            <span>Heat transfer, solid mechanics and manufacturing, backed by CAD/FEA and lab work.</span>
+          </div>
+          <div class="interest-chip">
+            <strong>Data Science &amp; ML</strong>
+            <span>From classic ML to deep models for forecasting, anomaly detection and representation learning.</span>
+          </div>
+          <div class="interest-chip">
+            <strong>Autonomous Systems</strong>
+            <span>Navigation, imitation learning and control — getting robots to behave intelligently in the loop.</span>
+          </div>
+          <div class="interest-chip">
+            <strong>Financial Maths</strong>
+            <span>Time-series, risk signals and ML on markets; more interested in structure than hype.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-kicker">A mix of mechanical, data and systems work. Links point to code or notebooks.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-topline">Deep Learning · FEM · Heat Transfer</div>
+          <h3 class="project-title">Deep Learning Surrogate for 2D Heat Conduction</h3>
+          <p class="project-desc">
+            Generated thousands of FEM simulations for 2D conduction plates under varying boundary conditions,
+            then trained CNN surrogates to predict steady-state temperature fields with
+            <strong>&lt; 3% error vs FEM</strong>, at <strong>~25× faster inference</strong>.
+          </p>
+          <div class="project-meta">
+            <span>Python</span><span>PyTorch</span><span>FEM</span><span>Surrogate modelling</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              View on GitHub
+            </a>
+            <a href="https://www.kaggle.com/" target="_blank" rel="noreferrer">
+              Notebook / analysis
             </a>
           </div>
+        </article>
 
-          <ul class="meta">
-            <li><strong>Focus:</strong> Sparse Neural Nets, Systems for ML, C++/CUDA</li>
-            <li><strong>Currently:</strong> BTP on Sparse Neural Networks • CS minor</li>
-          </ul>
-        </div>
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-topline">Time-Series · Markets</div>
+          <h3 class="project-title">Stock Price Forecasting Stack</h3>
+          <p class="project-desc">
+            Benchmarked ARIMA, Prophet and Transformer Seq2Seq models on long-horizon equity data,
+            then added a wavelet-LSTM hybrid capturing multi-scale structure.
+            Improved RMSE vs baselines and tested across volatile periods with rolling backtests.
+          </p>
+          <div class="project-meta">
+            <span>Python</span><span>PyTorch</span><span>Prophet</span><span>Wavelet-LSTM</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              Repo / pipeline
+            </a>
+            <a href="https://www.kaggle.com/" target="_blank" rel="noreferrer">
+              Kaggle experiments
+            </a>
+          </div>
+        </article>
 
-        <figure class="hero-photo">
-          <img src="https://picsum.photos/seed/engineering-portrait/480/480" alt="Chad portrait placeholder" />
-        </figure>
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-topline">Autonomous Systems · ROS2 · Imitation Learning</div>
+          <h3 class="project-title">Autonomous Navigation via Behavior Cloning</h3>
+          <p class="project-desc">
+            Collected expert navigation rollouts in Gazebo using LaserScan and goal vectors,
+            then trained PyTorch behavior-cloning / DAgger policies.
+            Deployed as a ROS2 navigation node, achieving high goal-reach success at low-latency control rates.
+          </p>
+          <div class="project-meta">
+            <span>ROS2</span><span>Python</span><span>PyTorch</span><span>Navigation</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              ROS2 package
+            </a>
+            <a href="https://www.kaggle.com/" target="_blank" rel="noreferrer">
+              Training logs
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-topline">Optimization · Public Systems</div>
+          <h3 class="project-title">PDS Procurement Chain Optimization</h3>
+          <p class="project-desc">
+            Built a multi-stage LP for India’s Public Distribution System procurement flows,
+            incorporating supply, processing and storage constraints.
+            Achieved double-digit logistics cost reduction compared to baseline allocation.
+          </p>
+          <div class="project-meta">
+            <span>Python</span><span>PuLP / OR-Tools</span><span>GIS routing</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              Model &amp; scripts
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-topline">Systems Design · Data Structures</div>
+          <h3 class="project-title">Redis-lite In-Memory Key–Value Store</h3>
+          <p class="project-desc">
+            Implemented a lightweight key–value store using hash maps and linked lists with O(1) lookups,
+            plus LRU eviction and TTL expiry. Added append-only logging and recovery to mimic real cache behaviour.
+          </p>
+          <div class="project-meta">
+            <span>C++ / Python</span><span>Systems design</span><span>Caching</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              Implementation
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6 (placeholder you can edit) -->
+        <article class="project-card">
+          <div class="project-topline">Agentic AI · RAG · LangGraph</div>
+          <h3 class="project-title">Agentic Web Crawler &amp; Retrieval Agent</h3>
+          <p class="project-desc">
+            Designed an agentic pipeline that crawls websites, builds vector indices,
+            and routes user queries between local retrieval, web search and memory using LangGraph-based stateful agents.
+          </p>
+          <div class="project-meta">
+            <span>Python</span><span>LangGraph</span><span>Pinecone</span><span>RAG</span>
+          </div>
+          <div class="project-links">
+            <a class="primary-link" href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+              Agent code
+            </a>
+            <a href="https://www.kaggle.com/" target="_blank" rel="noreferrer">
+              Demo / logs
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Projects</h2>
-          <p class="section-sub">Selected work. Proof I ship.</p>
-        </div>
-
-        <div class="grid projects-grid">
-          <!-- Project Card 1 -->
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title">SparseNet: Pruned Training Pipeline</h3>
-              <span class="badge">ML • Research</span>
-            </div>
-            <p class="card-body">
-              End-to-end pipeline for magnitude pruning and structured sparsity. 
-              Implements gradual pruning schedules, sparse-aware optimizers, and 
-              ONNX export for inference.
-            </p>
-            <ul class="card-meta">
-              <li>PyTorch • CUDA kernels</li>
-              <li>Speedup: 2.3× on A100 (fp16)</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">Code</a>
-              <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">Paper</a>
-              <a class="btn" href="#" target="_blank" rel="noreferrer noopener">Demo</a>
-            </div>
-          </article>
-
-          <!-- Project Card 2 -->
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title">VoiceTutor: Conversational EdTech Agent</h3>
-              <span class="badge">Product • NLP</span>
-            </div>
-            <p class="card-body">
-              Voice-first tutoring with semantic emotion cues, whiteboard canvas, 
-              and low-latency streaming. Designed for human-grade feedback loops.
-            </p>
-            <ul class="card-meta">
-              <li>FastAPI • WebRTC • Whisper</li>
-              <li>LLM tools • RAG</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">Code</a>
-              <a class="btn" href="#" target="_blank" rel="noreferrer noopener">Live</a>
-            </div>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="card">
-            <div class="card-head">
-              <h3 class="card-title">Mech2ML: Lab Analytics Dashboard</h3>
-              <span class="badge">Data • Systems</span>
-            </div>
-            <p class="card-body">
-              Real-time lab telemetry with stream processing, anomaly detection, 
-              and Grafana overlays. Bridged mechanical rigs to ML pipelines.
-            </p>
-            <ul class="card-meta">
-              <li>Kafka • TimescaleDB • Rust</li>
-              <li>gRPC • k8s</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">Code</a>
-              <a class="btn" href="#" target="_blank" rel="noreferrer noopener">Case study</a>
-            </div>
-          </article>
-        </div>
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="section-kicker">Less of a buzzword list, more of what I actually use.</p>
       </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section section-contrast">
-      <div class="container about-grid">
+      <div class="skills-grid">
         <div>
-          <h2>About</h2>
-          <p>
-            I’m an engineering student who wandered out of mechanical labs and into ML systems.
-            I like models that are sparse, APIs that are kind, and interfaces that make learning feel human.
-          </p>
-          <p>
-            When I’m not tuning kernels, I’m in the gym or reverse-engineering how attention actually behaves in the wild.
-          </p>
-          <div class="about-cta">
-            <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">Download Résumé</a>
+          <div class="skills-mini-heading">Languages &amp; stack</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">PyTorch</span>
+            <span class="skill-pill">TensorFlow / Keras</span>
+            <span class="skill-pill">LangChain / LangGraph</span>
+            <span class="skill-pill">PuLP / OR-Tools</span>
+            <span class="skill-pill">PySpark</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Streamlit</span>
+            <span class="skill-pill">AWS (basic)</span>
+          </div>
+
+          <div class="skills-mini-heading" style="margin-top:1rem;">Mechanical &amp; robotics</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">CAD / SolidWorks</span>
+            <span class="skill-pill">FEM basics</span>
+            <span class="skill-pill">Heat &amp; Mass Transfer</span>
+            <span class="skill-pill">Controls &amp; PID</span>
+            <span class="skill-pill">Robotics (kinematics / sensors)</span>
+            <span class="skill-pill">ROS2</span>
+          </div>
+
+          <div class="skills-mini-heading" style="margin-top:1rem;">Quant &amp; data</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Time-series modelling</span>
+            <span class="skill-pill">Econometrics basics</span>
+            <span class="skill-pill">Optimization &amp; OR</span>
+            <span class="skill-pill">Churn / risk / anomaly ML</span>
           </div>
         </div>
-        <ul class="about-list">
-          <li><strong>Skills:</strong> C++ • PyTorch • CUDA • Python • Rust • Systems for ML</li>
-          <li><strong>Interests:</strong> Efficient training, eval pipelines, pedagogy UX</li>
-          <li><strong>Location:</strong> New Delhi, India</li>
-        </ul>
+
+        <div>
+          <div class="skills-mini-heading">A few things I’m proud of</div>
+          <div class="timeline">
+            <div class="timeline-row">
+              <span class="timeline-tag">IIT Delhi</span>
+              <div>
+                <strong>B.Tech Mechanical · Robotics minor</strong><br />
+                Built a profile that spans labs, Hyperloop work and ML projects.
+              </div>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-tag">Agentic AI</span>
+              <div>
+                <strong>RAG &amp; LangGraph work</strong><br />
+                Designed retrieval agents that can switch between local context, web search and long-term memory.
+              </div>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-tag">Optimization</span>
+              <div>
+                <strong>PDS procurement modelling</strong><br />
+                Worked on real-world routing and capacity allocation problems for public systems.
+              </div>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-tag">Markets</span>
+              <div>
+                <strong>Forecasting &amp; risk views</strong><br />
+                Built forecasting and anomaly stacks around stock/transaction data with interpretable models.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Get in touch</h2>
-          <p class="section-sub">Drop a message. I actually reply.</p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact &amp; Links</h2>
+        <p class="section-kicker">Best way to reach out for roles, collaborations, or just to talk about an idea.</p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-text">
+          <p>
+            I’m looking for roles where I can
+            <span>design systems end-to-end</span> — from modelling the problem,
+            to shipping code that runs reliably.
+          </p>
+          <p style="margin-top:0.4rem;">
+            Most of my work lives on GitHub and Kaggle; happy to walk through any project in detail.
+          </p>
         </div>
-
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="_replyto" type="email" placeholder="you@domain.com" required />
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me what you’re building..." required></textarea>
-          </div>
-          <button class="btn" type="submit">Send</button>
-        </form>
-        <p class="contact-note">Prefer email? <a href="mailto:chad@example.com">chad@example.com</a></p>
+        <div class="contact-links">
+          <!-- Replace the hrefs below with your actual links if needed -->
+          <a class="highlight" href="mailto:akshanshkumar.gupta@example.com">
+            Email
+          </a>
+          <a href="https://github.com/akshanshakg" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.kaggle.com/" target="_blank" rel="noreferrer">
+            Kaggle
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </div>
       </div>
     </section>
+
+    <footer>
+      <div>© <span id="year"></span> · Built by Akshansh with HTML/CSS and unreasonable amounts of curiosity.</div>
+      <div>Last updated for placements · Dark-mode only on purpose.</div>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Chad. Built with care, caffeine, and fewer dependencies than usual.</p>
-      <ul class="social">
-        <li>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4zM8.5 8.5h3.8v2H12.4c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-4v-5.8c0-1.38-.03-3.16-1.92-3.16-1.93 0-2.22 1.5-2.22 3.05V23h-4V8.5z" fill="currentColor"/>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-
   <script>
-    // tiny enhancement: current year + smooth scroll
+    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-        history.pushState(null, '', '#'+id);
+
+    // Mobile nav toggle
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-mobile-open');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-mobile-open');
       });
     });
   </script>
