@@ -169,7 +169,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Placeholder styles */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -262,6 +261,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 25px;
+            margin-bottom: 100px;
         }
 
         .project-card {
@@ -325,9 +325,88 @@
         .link-icon { color: var(--text-main); text-decoration: none; font-size: 0.9rem; }
         .link-icon:hover { color: var(--primary); }
 
+        /* --- Contact Section --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-heading {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: var(--text-main);
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateX(5px);
+        }
+
+        .icon-svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-muted);
+            transition: fill 0.2s;
+        }
+
+        .contact-btn:hover .icon-svg {
+            fill: var(--primary);
+        }
+
+        .contact-placeholder {
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: var(--secondary);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         /* --- Footer --- */
         footer {
-            margin-top: 100px;
+            margin-top: 50px;
             padding: 50px 0;
             border-top: 1px solid var(--border);
             text-align: center;
@@ -343,6 +422,7 @@
             .btn-group { justify-content: center; }
             .hero-image-container { max-width: 400px; margin: 0 auto; height: 350px; }
             .exp-card { grid-template-columns: 1fr; gap: 10px; }
+            .contact-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
         }
     </style>
@@ -357,8 +437,7 @@
         <div class="nav-links">
             <a href="#experience">Experience</a>
             <a href="#projects">Work</a>
-            <a href="#about">About</a>
-            <a href="mailto:your-email@iitd.ac.in">Contact</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -634,6 +713,44 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="section-header animate-in delay-3">
+            <h2 class="section-title">Get in Touch</h2>
+            <p style="color: var(--text-muted);">Open for opportunities in Data Science & ML.</p>
+        </div>
+
+        <div class="contact-grid animate-in delay-3">
+            <div class="contact-card">
+                <h3 class="contact-heading">Let's Connect</h3>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">
+                    I'm currently looking for full-time roles or research collaborations. Feel free to reach out if you want to discuss AI agents, financial modelling, or robotics.
+                </p>
+                
+                <a href="mailto:akshansh11.iitd@gmail.com" class="contact-btn">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>Email Me</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/gupta-akshansh26/" target="_blank" class="contact-btn">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>Connect on LinkedIn</span>
+                </a>
+            </div>
+
+            <div class="contact-placeholder">
+                <p>> Initializing connection...</p>
+                <p>> Subject: Collaboration Inquiry</p>
+                <p>> Status: Online</p>
+                <br>
+                <p style="color: var(--primary);">akshansh@iitd:~$ <span class="cursor"></span></p>
+            </div>
         </div>
     </div>
 
