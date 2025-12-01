@@ -155,7 +155,7 @@
         }
         .btn-secondary:hover { border-color: var(--text-muted); background: rgba(255,255,255,0.05); }
 
-        /* --- Hero Image Area (Replaces Bento) --- */
+        /* --- Hero Image Area --- */
         .hero-image-container {
             position: relative;
             height: 400px;
@@ -421,9 +421,9 @@
                     <div class="exp-role">AI Engineering Intern</div>
                     <div class="exp-company">MindzKonnected, Greater Noida</div>
                     <ul class="exp-list">
-                        <li>Built an agentic AI pipeline using HuggingFace Transformers, Pinecone, and LangGraph for context-aware query handling.</li>
-                        <li>Designed URL ingestion with k-depth crawling; improved context relevance by <strong>30%</strong> and cut hallucinations by <strong>~25%</strong>.</li>
-                        <li>Enabled dynamic switching between real-time web search and local retrieval (RAG).</li>
+                        [cite_start]<li>Built an agentic AI pipeline using HuggingFace Transformers, Pinecone, and LangGraph for context-aware query handling. [cite: 196]</li>
+                        [cite_start]<li>Designed URL ingestion with k-depth crawling; improved context relevance by <strong>30%</strong> and cut hallucinations by <strong>~25%</strong>. [cite: 196]</li>
+                        [cite_start]<li>Enabled dynamic switching between real-time web search and local retrieval (RAG). [cite: 196]</li>
                     </ul>
                 </div>
             </div>
@@ -434,9 +434,9 @@
                     <div class="exp-role">Coordinator & Tech Lead</div>
                     <div class="exp-company">Infinity Hyperloop, IIT Delhi</div>
                     <ul class="exp-list">
-                        <li>Collaborated with a team of 30+ students for the design of a Hyperloop Pod.</li>
-                        <li>Represented IIT Delhi at European Hyperloop Week (ETH Zurich).</li>
-                        <li>Managed system integration and technical validation for the competition.</li>
+                        [cite_start]<li>Collaborated with a team of 30+ students for the design of a Hyperloop Pod. [cite: 210]</li>
+                        [cite_start]<li>Represented IIT Delhi at European Hyperloop Week (ETH Zurich). [cite: 212]</li>
+                        [cite_start]<li>Managed system integration and technical validation for the competition. [cite: 112, 113]</li>
                     </ul>
                 </div>
             </div>
@@ -457,7 +457,7 @@
                     <div class="project-type">Feature Engineering</div>
                     <h3 class="project-title">AMEX Offer Personalization</h3>
                     <p class="project-desc">
-                        Developed a ranking model on 366+ customer offer features. Applied gradient boosting with SHAP analysis to identify redemption frequency drivers.
+                        Developed a ranking model on 366+ customer offer features. [cite_start]Applied gradient boosting with SHAP analysis to identify redemption frequency drivers. [cite: 28, 29]
                         <br><br>
                         <span class="highlight-stat">18% Lift in CTR</span>
                     </p>
@@ -477,7 +477,7 @@
                     <div class="project-type">Machine Learning</div>
                     <h3 class="project-title">Customer Churn Prediction</h3>
                     <p class="project-desc">
-                        Built a prediction pipeline with SMOTE imbalance handling. Benchmarked ANN and SVM models; boosted SVM-Poly achieved high accuracy.
+                        Built a prediction pipeline with SMOTE imbalance handling. [cite_start]Benchmarked ANN and SVM models; boosted SVM-Poly achieved high accuracy. [cite: 31, 32]
                         <br><br>
                         <span class="highlight-stat">97% Accuracy</span>
                         <span class="highlight-stat">Survival Analysis</span>
@@ -495,10 +495,31 @@
 
             <div class="project-card">
                 <div class="card-body">
+                    <div class="project-type">Deep Learning & Simulation</div>
+                    <h3 class="project-title">Deep Learning Heat Transfer Surrogate</h3>
+                    <p class="project-desc">
+                        Trained CNN surrogate models on 5K+ FEM simulations to predict steady-state temperature fields. [cite_start]Replaced classical solvers with near real-time inference. [cite: 201]
+                        <br><br>
+                        <span class="highlight-stat">25x Faster Inference</span>
+                        <span class="highlight-stat">&lt;3% Error</span>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <div class="tech-tags">
+                        <span class="tag">CNN</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Simulation</span>
+                    </div>
+                    <a href="#" class="link-icon">Code ↗</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
                     <div class="project-type">Anomaly Detection</div>
                     <h3 class="project-title">Credit Card Fraud Detection</h3>
                     <p class="project-desc">
-                        Trained autoencoders on 284K transactions (0.17% fraud). Used reconstruction errors to flag anomalies under severe class imbalance.
+                        Trained autoencoders on 284K transactions (0.17% fraud). [cite_start]Used reconstruction errors to flag anomalies under severe class imbalance. [cite: 33]
                         <br><br>
                         <span class="highlight-stat">ROC-AUC 0.96</span>
                         <span class="highlight-stat">92% Recall</span>
@@ -538,7 +559,7 @@
                     <div class="project-type">Generative AI</div>
                     <h3 class="project-title">Agentic RAG Web Crawler</h3>
                     <p class="project-desc">
-                        Built a dynamic switching pipeline using LangGraph and Pinecone. The system intelligently switches between web search and local memory. 
+                        Built a dynamic switching pipeline using LangGraph and Pinecone. [cite_start]The system intelligently switches between web search and local memory. [cite: 196]
                         <br><br>
                         <span class="highlight-stat">Reduced hallucinations by ~25%</span>
                     </p>
@@ -558,7 +579,7 @@
                     <div class="project-type">Quantitative Finance</div>
                     <h3 class="project-title">Hybrid Equity Forecasting</h3>
                     <p class="project-desc">
-                        Benchmarked ARIMA and Prophet against Transformer models on 15 years of equity data. Built a Wavelet-LSTM hybrid to capture multi-scale patterns.
+                        Benchmarked ARIMA and Prophet against Transformer models on 15 years of equity data. [cite_start]Built a Wavelet-LSTM hybrid to capture multi-scale patterns. [cite: 202]
                         <br><br>
                         <span class="highlight-stat">RMSE optimized by 13%</span>
                     </p>
@@ -578,7 +599,7 @@
                     <div class="project-type">Operations Research</div>
                     <h3 class="project-title">PDS Supply Chain Optimization</h3>
                     <p class="project-desc">
-                        Developed a multi-stage Linear Programming framework to optimize procurement flows. Integrated Gati Shakti API for lat-long routing.
+                        Developed a multi-stage Linear Programming framework to optimize procurement flows. [cite_start]Integrated Gati Shakti API for lat-long routing. [cite: 205]
                         <br><br>
                         <span class="highlight-stat">17% Logistics Cost Reduction</span>
                     </p>
@@ -597,7 +618,7 @@
                     <div class="project-type">Robotics & AV</div>
                     <h3 class="project-title">Autonomous Nav with Imitation Learning</h3>
                     <p class="project-desc">
-                        Collected 45K+ expert trajectories in Gazebo and trained behavior-cloning policies. Deployed as a ROS 2 navigation node.
+                        Collected 45K+ expert trajectories in Gazebo and trained behavior-cloning policies. [cite_start]Deployed as a ROS 2 navigation node. [cite: 204]
                         <br><br>
                         <span class="highlight-stat">92% Success Rate</span>
                     </p>
